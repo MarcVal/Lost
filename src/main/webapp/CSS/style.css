@@ -67,7 +67,8 @@ input, textarea, keygen, select, button {
 .form-style span.required{
     color:red;
     }
-.form-style .tel-number-field{
+.form-style .tel-number-field,
+.form-style .select-field {
     width: 62%;
     text-align: center;
 }
