@@ -11,7 +11,7 @@ public class Losts {
     private String[] microchip;
     private String[] neutered;
 
-    public Losts(String ownerName, String email, Integer phone, String message, String[] microchip, String[] neutered) {
+    public Losts(String ownerName, String email, String phone, String message, String microchip, String neutered) {
         this.ownerName = ownerName;
         this.email = email;
         this.phone = phone;
