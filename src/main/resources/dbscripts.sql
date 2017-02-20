@@ -1,16 +1,10 @@
-CREATE TABLE someTable (
-    idSomeTable bigserial NOT NULL PRIMARY KEY,
-    field1 character(20),
-    field2 int,
-    field3 DATE not null default CURRENT_DATE,
-    field4 numeric(7,2)
+CREATE TABLE LostPets (
+    id bigserial NOT NULL PRIMARY KEY,
+    ownerName character(25) NOT NULL ,
+    email text not null UNIQUE  ,
+    phone int (min 10, max 10) NOT NULL,
+    message char (500) NOT NULL;
+    addedAt Date not null default CURRENT_DATE
 );
 
-CREATE TABLE someOtherTable (
-    idSomeOtherTable bigserial NOT NULL PRIMARY KEY,
-    field1 character(20),
-    field2 int NOT NULL REFERENCES someTable(idSomeTable)
-);
-
-INSERT INTO sometable( field1, field2, field4) VALUES ('value1', 10, 5.2);
-INSERT INTO someOtherTable( field1, field2) VALUES ('value2', 1);
+INSERT INTO LostPets (ownerName, email, phonem, message) VALUES ('LostPet','text 1','text2','text 3','text 4','text 5');
