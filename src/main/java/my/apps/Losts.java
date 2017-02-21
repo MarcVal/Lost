@@ -6,10 +6,10 @@ package my.apps;
 public class Losts {
     private String ownerName;
     private String email;
-    private int phone;
+    private String phone;
     private String message;
-    private String[] microchip;
-    private String[] neutered;
+    private String microchip;
+    private String neutered;
 
     public Losts(String ownerName, String email, String phone, String message, String microchip, String neutered) {
         this.ownerName = ownerName;
@@ -34,7 +34,7 @@ public class Losts {
         return this.email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -42,11 +42,11 @@ public class Losts {
         return this.message;
     }
 
-    public String[] getMicrochip() {
+    public String getMicrochip() {
         return this.microchip;
     }
 
-    public String[] getNeutered() {
+    public String getNeutered() {
         return this.neutered;
     }
 }

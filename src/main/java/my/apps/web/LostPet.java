@@ -35,7 +35,7 @@ public class LostPet extends HttpServlet {
         String[] Microchiped = request.getParameterValues("Yes" + "No");
         String[] Neutered = request.getParameterValues("Yes" + "No");
 
-        Losts newLosts = new Losts("ownerName","email", "phone","message","microchiped","neutered");
+        Losts newLosts = new Losts("ownerName", "email", "phone", "message", "microchiped", "neutered");
         try {
             lostRepository.insert(newLosts);
             out.println("Inserted - <b>" + newLosts.toString() + "</b><br/>");
@@ -61,9 +61,10 @@ public class LostPet extends HttpServlet {
             e.printStackTrace();
         }
 
-       // finished writing, send to browser
+        // finished writing, send to browser
         out.close();
         out.println("<a href='/'>Go Back</a>");
+    }
 
         @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -100,5 +101,5 @@ public class LostPet extends HttpServlet {
             out.println("Destroying Servlet! Counter is:" + counter);
             super.destroy();
         }
-    }
+
 }

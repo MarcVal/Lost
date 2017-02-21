@@ -23,7 +23,7 @@ public class LostRepository {
         PreparedStatement pSt = conn.prepareStatement("INSERT INTO LostPets (ownerName, email, phone, message, neutered, chipped) VALUES (?,?,?,?,?,?)");
         pSt.setString(1, losts.getOwnerName());
         pSt.setString(2, losts.getEmail());
-        pSt.setInt(3, losts.getPhone());
+        pSt.setString(3, losts.getPhone());
         pSt.setString(4, losts.getMessage());
         pSt.setString(5, String.valueOf(losts.getNeutered()));
         pSt.setString(6, String.valueOf(losts.getMicrochip()));
@@ -49,7 +49,7 @@ public class LostRepository {
         Statement st = conn.createStatement();
 
         // 4. execute a query
-        ResultSet rs = st.executeQuery("SELECT ownerName, email, phone, message, neutered, chipped FROM losts");
+        ResultSet rs = st.executeQuery("SELECT ownerName, email, phone, message, neutered, chipped FROM LostPets");
 
         // 5. iterate the result set and print the values
         List<Losts> lostss = new ArrayList<>();

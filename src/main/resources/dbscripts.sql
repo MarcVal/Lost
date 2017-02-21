@@ -8,4 +8,4 @@ CREATE TABLE LostPets (
     chipped character (3)
     );
 
-INSERT INTO LostPets (ownerName, email, phone, message, neutered, chipped) VALUES (?,?,?,?,?,?);
+INSERT INTO LostPets (ownerName, email, phone, message, neutered, chipped) VALUES ('Ion','ion@ion.ion','1234','hello','yes','yes');
