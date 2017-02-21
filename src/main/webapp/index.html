@@ -11,8 +11,9 @@
           content="Hundreds of pets get lost every month in Cluj-Napoca. See how can you help them get back to their families.Post or search a lost pet"/>
     <link rel="icon" href="TitlePic.jpg">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/CSS" href="CSS/style.css">
-
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/colorbox.css">
+    <link rel="stylesheet" type="text/css" href="assets/justifiedGallery.min.css">
 
 </head>
 
@@ -53,13 +54,13 @@
                             <label class="block-label"><span>Photo:</span><input type="file" name="Photo"
                                                                                  class="input-field"
                                                                                  value="Choose photo"></label>
-                            <label class="block-label"><span>Michrociped:<span class="required">*</span></span>
-                                <label for="yes"><input type="checkbox" id="yes">Yes &nbsp;&nbsp;</label>
-                                <label for="No"><input type="checkbox" id="no">No</label>
+                            <label class="block-label"><span>Microchipped:<span class="required">*</span></span>
+                                <label  ><input type="radio" id="Microchipped" name = "chipped" value="yes">Yes &nbsp;&nbsp;</label>
+                                <label ><input type="radio" id=" Not Microchipped" name = "chipped" value="yes">No</label>
                             </label>
                             <label class="block-label"><span>Neutered:<span class="required">*</span></span>
-                                <label for="yes"><input type="checkbox" id="Neutered" name="neutered" value="yes">Yes &nbsp;&nbsp;</label>
-                                <label for="no"><input type="checkbox" id="Not neutered" name="neutered" value="no">No </label>
+                                <label ><input type="radio" id="Neutered" name="neutered" value="yes">Yes &nbsp;&nbsp;</label>
+                                <label ><input type="radio" id="Not neutered" name="neutered" value="no">No </label>
                             </label>
                             <label><span>&nbsp;</span><input type="submit" value="Post"/></label>
                         </form>
@@ -90,13 +91,13 @@
                                                                                       autofocus=""
                                                                                       placeholder="1. Nume 2. Specia: canina/felina 3. Sexul 4. Talie 5. Culoare 6.Zona pierderii 7. Data pierderii 8. Alte informatii"
                                                                                       wrap="soft"></textarea></label>
-                            <label class="block-label"><span>Michrociped:</span>
-                                <label for="yes"><input type="checkbox" id="getyes">Yes &nbsp;&nbsp;</label>
-                                <label for="No"><input type="checkbox" id="getno">No</label>
+                            <label class="block-label"><span>Microchipped:<span class="required">*</span></span>
+                                <label  ><input type="radio" id="Microchipped2" name = "chipped" value="yes">Yes &nbsp;&nbsp;</label>
+                                <label ><input type="radio" id=" Not Microchipped2" name = "chipped" value="yes">No</label>
                             </label>
-                            <label class="block-label"><span>Neutered:</span>
-                                <label for="yes"><input type="checkbox" id="getNeutered">Yes &nbsp;&nbsp;</label>
-                                <label for="no"><input type="checkbox" id="getNotNeutered">No </label>
+                            <label class="block-label"><span>Neutered:<span class="required">*</span></span>
+                                <label ><input type="radio" id="Neutered2" name="neutered" value="yes">Yes &nbsp;&nbsp;</label>
+                                <label ><input type="radio" id="Not neutered2" name="neutered" value="no">No </label>
                             </label>
                             <label><span>&nbsp;</span><input type="submit" value="Search"/></label>
                         </form>
@@ -110,7 +111,6 @@
     <h2> Header 2 pentru informatii </h2>
     <div class="line"></div>
     <p> Paragraf cu informatii </p>
-</div>
 </div>
 
 <div class="parallax-middle"></div>
@@ -183,8 +183,7 @@
     $('#gallery').justifiedGallery({
         rowHeight: 150,
         lastRow: 'nojustify',
-        margins: 3,
-
+        margins: 3
     });
 </script>
 </body>
