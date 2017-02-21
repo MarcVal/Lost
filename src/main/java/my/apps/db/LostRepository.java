@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by SatsangTurya on 2/20/2017.
+ * Created by Valeria Marc on 2/20/2017.
  */
 public class LostRepository {
 
@@ -59,12 +59,17 @@ public class LostRepository {
                     rs.getString("email"),
                     rs.getString("phone"),
                     rs.getString("message"),
-                    rs.getString("neutered"),
-                    rs.getString("chipped")
+                    rs.getString("microchiped"),
+                    rs.getString("neutered")
             );
-            System.out.print(rs.getString("username").trim());
-            System.out.print("---");
-            System.out.println(rs.getString("password").trim());
+            lostss.add(losts);
         }
+        //6.close the objects
+        rs.close();
+        st.close();
+        conn.close();
+        return lostss;
     }
 }
+
+
