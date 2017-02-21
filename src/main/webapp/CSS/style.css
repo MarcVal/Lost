@@ -1,83 +1,141 @@
 body {
     text-align: justify;
-background-image: url("cover.jpg");
-background-repeat: no-repeat;
-background-size: cover;
 
 }
 h1 {
-    font-weight: bold;
-    font-style: normal;
-    border-bottom: 2px solid #ddd;
-    margin-bottom: 25px;
     text-align: center;
-    font: 25px Georgia, Gelvetica, sans-serif;
-    font-weight: 900;
-    display: block;
-    margin-left:auto;
-    margin-right:auto;
-    width: 75%;
-    max-width: 500px;
-    padding: 20px 12px 10px 20px;
+    font-size: 37px;
+    color: #333;
+}
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+}
+h3 {
+    text-align: center;
+    font-size: 25px;
+    color: darkmagenta;
 }
 p {
     font-size: large;
-    font-family: "Times New Roman", Times, serif;
-    color: blue;
+    font-size: 13px;
+}
+/*-----------------------------------------------------------------------------------*/
+/*	menu
+/*-----------------------------------------------------------------------------------*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(96, 125, 139, 0.7);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
 }
 
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+}
+/*-----------------------------------------------------------------------------------*/
+/*	general classes
+/*-----------------------------------------------------------------------------------*/
+.padding {
+    padding: 50px 0 100px;
+}
+.line {
+    padding: 20px 30px 50px;
+    width: 100px;
+    border-top: 1px solid #fff;
+    display: block;
+    margin: auto;
+}
+/*-----------------------------------------------------------------------------------*/
+/*	parallax
+/*-----------------------------------------------------------------------------------*/
+.parallax, .parallax-middle, .parallax-footer {
+    /* Set a specific height */
+    min-height: 700px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax{
+    /* The image used */
+    background-image: url("cover.jpg");
+}
+.parallax-middle{
+    /* The image used */
+    background-image: url("parallax.jpg");
+}
+.parallax-footer {
+    /* The image used */
+    background-image: url("parallax-footer.jpg");
+}
+/*-----------------------------------------------------------------------------------*/
+/*	form
+/*-----------------------------------------------------------------------------------*/
 .input-area {
     height: auto;
     min-height: 100vh;
     width: auto;
     background-color: rgba(255, 255, 255, 0.5);
 }
-
 input, textarea, keygen, select, button {
-    font: 15px Georgia;
+    font: 13.3333px Arial;
 }
-.form-style {
+.form-style{
     display: block;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 75%;
     max-width: 500px;
     padding: 20px 12px 10px 20px;
-    font: 15px Georgia, Gelvetica, sans-serif;
+    font: 13px Arial, Helvetica, sans-serif;
 }
-.form-style-heading {
+.form-style-heading{
     font-weight: bold;
-    font-style: normal;
-    border-bottom: 2px solid #ddd;
-    margin-bottom: 15px;
-    font-size:18px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 15px;
     padding-bottom: 3px;
 }
-.form-style .block-label{
+.form-style .block-label {
     display: block;
-    margin: 0px 0px 15px 0px;
-   }
-.form-style label > span
-{
+    margin: 0px 0px 12px 0px;
+}
+.form-style label > span{
     width: 100px;
     font-weight: bold;
+    float: left;
     padding-top: 8px;
     padding-right: 5px;
 }
 .form-style span.required{
     color:red;
-    }
-.form-style .tel-number-field,
-.form-style .select-field {
+}
+.form-style .tel-number-field{
     width: 62%;
     text-align: center;
 }
 .form-style input.input-field{
     width: 62%;
-    text-align: center
 
 }
-
 .form-style input.input-field,
 .form-style .tel-number-field,
 .form-style .textarea-field,
@@ -86,9 +144,9 @@ input, textarea, keygen, select, button {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     border: 1px solid #C2C2C2;
-    box-shadow: 1px 1px 4px #EBEBEB;
-    -moz-box-shadow: 1px 1px 4px #EBEBEB;
-    -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+    /* box-shadow: 1px 1px 4px #EBEBEB;
+  -moz-box-shadow: 1px 1px 4px #EBEBEB;
+  -webkit-box-shadow: 1px 1px 4px #EBEBEB; */
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -99,28 +157,28 @@ input, textarea, keygen, select, button {
 .form-style .tel-number-field:focus,
 .form-style .textarea-field:focus,
 .form-style .select-field:focus{
-    border: 1px solid #0724cc;
+    border: 1px solid #0C0;
 }
 .form-style .textarea-field{
-    height: 85px;
+    height: 50px;
     width: 62%;
 }
 .form-style input[type=submit],
 .form-style input[type=button]{
     border: none;
-    padding: 8px 15px 8px 15px;
-    background: #e37226;
+    padding: 8px 26px 8px 26px;
+    background: #FF8500;
     color: #fff;
-    box-shadow: 1px 1px 4px #DADADA;
-    -moz-box-shadow: 1px 1px 4px #DADADA;
-    -webkit-box-shadow: 1px 1px 4px #DADADA;
-    border-radius: 15px;
-    -webkit-border-radius:15px;
-    -moz-border-radius:15px;
+    /* box-shadow: 1px 1px 4px #DADADA;
+     -moz-box-shadow: 1px 1px 4px #DADADA;
+     -webkit-box-shadow: 1px 1px 4px #DADADA; */
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
 }
 .form-style input[type=submit]:hover,
 .form-style input[type=button]:hover{
-    background: rgb(227, 72, 9);
+    background: #EA7B00;
     color: #fff;
     font-weight: bold;
     box-shadow: 0px 0px 0px 3px #f7f7f7;
@@ -129,8 +187,8 @@ input, textarea, keygen, select, button {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-transform: uppercase;
-    transition: transform ease-out 0.1s, background 0.2s;
-  }
+    transition: transform ease-out 0.1s, background 0.2s;}
+
 .form-style input[type=submit]:active,
 .form-style input[type=button]:active {
     background-color: rgba(9, 0, 255, 0.41);
@@ -139,6 +197,44 @@ input, textarea, keygen, select, button {
 }
 
 input[type=checkbox], input[type=radio] {
-    margin: 0px 7px 5px 0px;
-    background-color: rebeccapurple;
+    margin: 9px 7px 0px 0px;
 }
+/*-----------------------------------------------------------------------------------*/
+/*	info area
+/*-----------------------------------------------------------------------------------*/
+.info-area {
+    background-color: rgb(96, 125, 139);
+    color: #fff;
+    text-align: center;
+}
+/*-----------------------------------------------------------------------------------*/
+/*	Justified gallery
+/*-----------------------------------------------------------------------------------*/
+.gallery {
+    background-color: rgb(96, 125, 139);
+    color: #fff;
+}
+/*-----------------------------------------------------------------------------------*/
+/*	footer
+/*-----------------------------------------------------------------------------------*/
+footer {
+    height: 30px;
+    text-align: center;
+    background-color: rgba(96, 125, 139, 0.7);
+    color: #fff;
+    padding: 20px 0 35px 0;
+}
+footer p {
+    margin: 0;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	Media Queries
+/*-----------------------------------------------------------------------------------*/
+
+@media (max-width: 1024px) {
+    .form-style {
+        width: 100%;
+    }
+}
+

@@ -7,96 +7,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="revisit-after" content="2 days">
     <title>LostPet&bull;Cluj-Napoca&bull;</title>
-    <meta name="description" content="Hundreds of pets get lost every month in Cluj-Napoca. See how can you help them get back to their families.Post or search a lost pet"/>
+    <meta name="description"
+          content="Hundreds of pets get lost every month in Cluj-Napoca. See how can you help them get back to their families.Post or search a lost pet"/>
     <link rel="icon" href="TitlePic.jpg">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/CSS" href="css/style.css">
+    <link rel="stylesheet" type="text/CSS" href="CSS/style.css">
 
 
 </head>
 
 <body>
-<div class="input-area">
-    <div class="container-fluid">
+<ul>
+    <li><a href="#home">HOME</a></li>
+    <li><a href="#info">INFO</a></li>
+    <li><a href="#pets-gallery">GALLERY</a></li>
+</ul>
 
-        <h1> Lost Pet! </h1>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-style">
-                    <div class="form-style-heading"> Adauga un anunt!</div>
+<div class="parallax padding">
+    <div id="home" class="input-area">
+        <div class="container-fluid">
+            <h1> Lost Pet! </h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-style">
+                        <div class="form-style-heading">Post</div>
 
-                    <form action="LostPet" method="post">
-                        <label class="block-label"><span>Choose:</span><select name="type" class="select-field">
-                            <option value="Selecteaza" onfocus>Selecteaza</option>
-                            <option value="pierdut">Am pierdut</option>
-                            <option value="gasit">Am gasit</option>
-                        </select></label>
+                        <form action="LostPet" method="post">
+                            <label class="block-label"><span>Select:</span><select name="type" class="select-field">
+                                <option value="Selecteaza" onfocus>Select</option>
+                                <option value="pierdut">Lost</option>
+                                <option value="gasit">Found</option>
+                            </select></label>
 
-                        <label class="block-label"> <span>Owner:<span class="required">*</span></span> <input
-                                type="text" class="input-field" name="OwnerName" value=""/></label>
-                        <label class="block-label"><span>Email:<span class="required">*</span></span><input
-                                type="email" class="input-field" name="Email" required></label>
-                        <label class="block-label"><span>Phone:</span><input type="tel" class="tel-number-field"
-                                                                              name="Phone" value="" maxlength="10"
-                                                                              minlength="10"></label>
-                        <label class="block-label"><span>Message:<span class="required">*</span></span> <textarea
-                                name="Message" class="textarea-field"                                 placeholder="1. Nume 2. Specia: canina/felina 3. Sexul 4. Talie 5. Culoare 6.Zona pierderii 7. Data pierderii 8. Alte informatii"
-                                wrap="hard" required></textarea></label>
-                        <label class="block-label"><span>Photo:</span><input type="file" name="Photo"
-                                                                             class="input-field"
-                                                                             value="Alege o fotografie"></label>
-                        <label class="block-label"><span>Michrociped:</span>
-                            <label for="yes"><input type="checkbox" id="yes">Yes &nbsp;&nbsp;</label>
-                            <label for="No"><input type="checkbox" id="no">No</label>
-                        </label>
-                        <label class="block-label"><span>Neutered:</span>
-                            <label for="yes"><input type="checkbox" id="Neutered">Yes &nbsp;&nbsp;</label>
-                            <label for="no"><input type="checkbox" id="Not neutered">No </label>
-                        </label>
-                        <label><span>&nbsp;</span><input type="submit" value="Submit"/></label>
-                    </form>
+                            <label class="block-label"> <span>Owner:<span class="required">*</span></span> <input
+                                    type="text" class="input-field" name="OwnerName" value="" required></label>
+                            <label class="block-label"><span>Email:<span class="required">*</span></span><input
+                                    type="email" class="input-field" name="Email" required></label>
+                            <label class="block-label"><span>Phone:</span><input type="tel" class="tel-number-field"
+                                                                                 name="Phone" value="" maxlength="10"
+                                                                                 minlength="10" required></label>
+                            <label class="block-label"><span>Message:<span class="required">*</span></span> <textarea
+                                    name="Message" class="textarea-field"
+                                    placeholder="1. Nume 2. Specia: canina/felina 3. Sexul 4. Talie 5. Culoare 6.Zona pierderii 7. Data pierderii 8. Alte informatii"
+                                    wrap="hard" required></textarea></label>
+                            <label class="block-label"><span>Photo:</span><input type="file" name="Photo"
+                                                                                 class="input-field"
+                                                                                 value="Choose photo"></label>
+                            <label class="block-label"><span>Michrociped:<span class="required">*</span></span>
+                                <label for="yes"><input type="checkbox" id="yes">Yes &nbsp;&nbsp;</label>
+                                <label for="No"><input type="checkbox" id="no">No</label>
+                            </label>
+                            <label class="block-label"><span>Neutered:<span class="required">*</span></span>
+                                <label for="yes"><input type="checkbox" id="Neutered">Yes &nbsp;&nbsp;</label>
+                                <label for="no"><input type="checkbox" id="Not neutered">No </label>
+                            </label>
+                            <label><span>&nbsp;</span><input type="submit" value="Post"/></label>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="form-style">
-                    <div class="form-style-heading">Cauta un anunt!</div>
+                <div class="col-sm-6">
+                    <div class="form-style">
+                        <div class="form-style-heading">Search</div>
 
 
-                    <form action="LostPet" method="get">
-                        <label class="block-label"><span>Choose:</span><select name="type" class="select-field">
-                            <option value="Selecteaza">Selecteaza</option>
-                            <option value="pierdut">S-a pierdut</option>
-                            <option value="gasit">S-a gasit</option>
-                        </select></label>
+                        <form action="LostPet" method="get">
+                            <label class="block-label"><span>Choose:</span><select name="type" class="select-field">
+                                <option value="Selecteaza">Selecteaza</option>
+                                <option value="pierdut">S-a pierdut</option>
+                                <option value="gasit">S-a gasit</option>
+                            </select></label>
 
-                        <label class="block-label"> <span>Owner:</span> <input type="text" name="OwnerName"
-                                                                                    class="input-field" value=""></label>
-                        <label class="block-label"><span>Email:</span><input type="email" class="input-field"
-                                                                             name="Email"
-                                                                             value=""></label>
-                        <label class="block-label"><span>Phone:</span><input type="tel" class="tel-number-field"
-                                                                            name="Phone"
-                                                                            value=""></label>
-                        <label class="block-label"><span>Keyword:</span><textarea name="Message" class="textarea-field"
-                                                                                  autofocus=""
-                                                                                  placeholder="1. Nume 2. Specia: canina/felina 3. Sexul 4. Talie 5. Culoare 6.Zona pierderii 7. Data pierderii 8. Alte informatii"
-                                                                                  wrap="soft"></textarea></label>
-                        <label class="block-label"><span>Michrociped:</span>
-                            <label for="yes"><input type="checkbox" id="getyes">Yes &nbsp;&nbsp;</label>
-                            <label for="No"><input type="checkbox" id="getno">No</label>
-                        </label>
-                        <label class="block-label"><span>Neutered:</span>
-                            <label for="yes"><input type="checkbox" id="getNeutered">Yes &nbsp;&nbsp;</label>
-                            <label for="no"><input type="checkbox" id="getNotNeutered">No </label>
-                        </label>
-                        <label><span>&nbsp;</span><input type="submit" value="Search"/></label>
-                    </form>
+                            <label class="block-label"> <span>Owner:</span> <input type="text" name="OwnerName"
+                                                                                   class="input-field" value=""></label>
+                            <label class="block-label"><span>Email:</span><input type="email" class="input-field"
+                                                                                 name="Email"
+                                                                                 value=""></label>
+                            <label class="block-label"><span>Phone:</span><input type="tel" class="tel-number-field"
+                                                                                 name="Phone"
+                                                                                 value=""></label>
+                            <label class="block-label"><span>Keyword:</span><textarea name="Message"
+                                                                                      class="textarea-field"
+                                                                                      autofocus=""
+                                                                                      placeholder="1. Nume 2. Specia: canina/felina 3. Sexul 4. Talie 5. Culoare 6.Zona pierderii 7. Data pierderii 8. Alte informatii"
+                                                                                      wrap="soft"></textarea></label>
+                            <label class="block-label"><span>Michrociped:</span>
+                                <label for="yes"><input type="checkbox" id="getyes">Yes &nbsp;&nbsp;</label>
+                                <label for="No"><input type="checkbox" id="getno">No</label>
+                            </label>
+                            <label class="block-label"><span>Neutered:</span>
+                                <label for="yes"><input type="checkbox" id="getNeutered">Yes &nbsp;&nbsp;</label>
+                                <label for="no"><input type="checkbox" id="getNotNeutered">No </label>
+                            </label>
+                            <label><span>&nbsp;</span><input type="submit" value="Search"/></label>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </div>
 </div>
+<div id="info" class="col-sm-12 info-area padding">
+    <h2> Header 2 pentru informatii </h2>
+    <div class="line"></div>
+    <p> Paragraf cu informatii </p>
+</div>
+</div>
+
+<div class="parallax-middle"></div>
+
+<div id="pets-gallery" class="row gallery padding">
+    <div class="col-sm-12">
+        <h3> Gallery </h3>
+        <div class="line"></div>
+    </div>
+    <div class="col-xs-12">
+        <div id="gallery" class="justified-gallery">
+            <a class='group' href="gallery/1.png" title="">
+                <img alt="" src="gallery/1.png"/>
+            </a>
+            <a class='group' href="gallery/2.png" title="">
+                <img alt="" src="gallery/2.png"/>
+            </a>
+            <a class='group' href="gallery/3.jpg" title="">
+                <img alt="" src="gallery/3.jpg"/>
+            </a>
+            <a class='group' href="gallery/4.jpg" title="">
+                <img alt="" src="gallery/4.jpg"/>
+            </a>
+            <a class='group' href="gallery/5.jpg" title="">
+                <img alt="" src="gallery/5.jpg"/>
+            </a>
+            <a class='group' href="gallery/6.jpg" title="">
+                <img alt="" src="gallery/6.jpg"/>
+            </a>
+            <a class='group' href="gallery/7.jpg" title="">
+                <img alt="" src="gallery/7.jpg"/>
+            </a>
+            <a class='group' href="gallery/8.jpg" title="">
+                <img alt="" src="gallery/8.jpg"/>
+            </a>
+            <a class='group' href="gallery/9.jpg" title="">
+                <img alt="" src="gallery/9.jpg"/>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="parallax-footer padding"></div>
+
+<footer>
+    <p>Take care of your pet.</p>
+</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="assets/jquery.colorbox.js"></script>
+
+<script>
+    jQuery(document).ready(function () {
+        jQuery(".group").colorbox({
+            rel: 'group',
+            transition: "elastic",
+            maxWidth: "95%",
+            maxHeight: "85%",
+            scalePhotos: true
+        });
+    });
+</script>
+
+<script src="assets/jquery.justifiedGallery.min.js"></script>
+
+<script>
+    $('#gallery').justifiedGallery({
+        rowHeight: 150,
+        lastRow: 'nojustify',
+        margins: 3,
+
+    });
+</script>
 </body>
 </html>
 <!--Mesaj de confirmare la submit button-->
