@@ -30,27 +30,32 @@ public class LostPet extends HttpServlet {
         //get input as string
         String OwnerName = request.getParameter("OwnerName");
         String Email = request.getParameter("Email");
-        Integer Phone = Integer.valueOf(request.getParameter("Phone"));
+        String Phone = request.getParameter("Phone");
         String Message = request.getParameter("Message");
-        String[] Microchiped = request.getParameterValues("Yes" + "No");
-        String[] Neutered = request.getParameterValues("Yes" + "No");
+        String Microchipped = request.getParameter("chipped");
+        String Neutered = request.getParameter("neutered");
 
-        Losts newLosts = new Losts("ownerName", "email", "phone", "message", "microchiped", "neutered");
+        Losts newLosts = new Losts(OwnerName, Email, Phone, Message, Microchipped, Neutered);
+        resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
         try {
-            lostRepository.insert(newLosts);
+
+            out.println("<head>");
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
+            out.println("</head>");
             out.println("Inserted - <b>" + newLosts.toString() + "</b><br/>");
 
-            out.println(OwnerName + Email + Phone + Message + Neutered + Microchiped);
+            out.println(OwnerName + Email + Phone + Message + Neutered + Microchipped);
 
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"CSS/style.css\">");
             out.println("<h2>Are you sure? </h2>");
-            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
             out.println("OwnerName - <b>" + OwnerName + "</b><br/>");
             out.println("Email - <b>" + Email + "</b><br/>");
-            out.println("Phone" + Phone + "</b><br/>");
-            out.println("Text" + Message + "</b><br/>");
-            out.println("Chiped" + Microchiped + "</b><br/>");
-            out.println("Fixed" + Neutered + "</b><br/>");
-
+            out.println("Phone<b>" + Phone + "</b><br/>");
+            out.println("Text<b>" + Message + "</b><br/>");
+            out.println("Chiped<b>" + Microchipped + "</b><br/>");
+            out.println("Fixed<b>" + Neutered + "</b><br/>");
+            lostRepository.insert(newLosts);
 
         } catch (ClassNotFoundException e) {
             out.println("Class not found issues!");
@@ -62,16 +67,19 @@ public class LostPet extends HttpServlet {
         }
 
         // finished writing, send to browser
-        out.close();
         out.println("<a href='/'>Go Back</a>");
+        out.close();
+
     }
 
         @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             counter++;
             List<Losts> lostss;
+            String email = req.getParameter("Email");
+            String owner = req.getParameter("Owner");
             try {
-                lostss = lostRepository.read();
+                lostss = lostRepository.read("email","owner");
             } catch (Exception e) {
                 lostss = new ArrayList<>();
             }
@@ -84,6 +92,7 @@ public class LostPet extends HttpServlet {
 
             out.println("<h2>Get count</h2>");
             for (Losts losts : lostss) {
+                System.out.println(losts);
                 out.println("<b>" + losts.toString() + "</b><br />");
             }
             out.println(counter);

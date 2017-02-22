@@ -21,7 +21,6 @@ public class Losts {
     }
 
     @Override
-
     public String toString() {
         return "Losts: ownerName = " + ownerName;
     }
