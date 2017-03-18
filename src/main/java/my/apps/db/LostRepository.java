@@ -2,11 +2,15 @@ package my.apps.db;
 
 import my.apps.Losts;
 import my.apps.domain.LostEntry;
+import my.apps.web.LostPet;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Valeria Marc on 2/20/2017.
@@ -29,6 +33,7 @@ public class LostRepository {
         pSt.setString(4, losts.getMessage());
         pSt.setString(5, (losts.getNeutered()));
         pSt.setString(6, (losts.getMicrochip()));
+
 
         // 4. execute a prepared statement
         int rowsInserted = pSt.executeUpdate();

@@ -1,5 +1,7 @@
 package my.apps;
 
+import java.util.Date;
+
 /**
  * Created by Valeria Marc on 2/19/2017.
  */
@@ -11,6 +13,7 @@ public class Losts {
     private String microchip;
     private String neutered;
 
+
     public Losts(String ownerName, String email, String phone, String message, String microchip, String neutered) {
         this.ownerName = ownerName;
         this.email = email;
@@ -18,6 +21,7 @@ public class Losts {
         this.message = message;
         this.microchip = microchip;
         this.neutered = neutered;
+
     }
 
     @Override
@@ -48,4 +52,6 @@ public class Losts {
     public String getNeutered() {
         return this.neutered;
     }
+
+
 }
