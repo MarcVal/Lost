@@ -94,6 +94,10 @@ public class LostPet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         counter++;
 
+        String OwnerName = req.getParameter("OwnerName").trim();
+        String Email = req.getParameter("Email").trim();
+        String Phone = req.getParameter("Phone").trim();
+
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         out.println("<head>");
@@ -114,8 +118,7 @@ public class LostPet extends HttpServlet {
             out.println("<th>Neuter status</th>");
 
             out.println("</tr>");
-
-            List<LostEntry> losts = LostRepository.read();
+            List<LostEntry> losts = lostRepository.read(Email, OwnerName, Phone);
             for (LostEntry lost : losts) {
                 out.println("<tr>");
                 out.println("<td>" + lost.getOwner() + "</td>");

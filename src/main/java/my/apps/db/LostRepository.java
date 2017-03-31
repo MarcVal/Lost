@@ -44,35 +44,72 @@ public class LostRepository {
         conn.close();
     }
 
-    public List<Losts> read(String email, String owner) throws ClassNotFoundException, SQLException {
+    public List<LostEntry> read(String email, String owner, String phone) throws ClassNotFoundException, SQLException {
 
+        System.out.println("email:"+email + "|"+owner+"|");
         // 1. load the driver
         Class.forName("org.postgresql.Driver");
+        int indexEmail = 0, indexOwner = 0, indexPhone = 0;
 
         // 2. obtain a connection
         Connection conn = DriverManager.getConnection(DemoCRUDOperations.URL, DemoCRUDOperations.USERNAME, DemoCRUDOperations.PASSWORD);
 
         // 3. create a query statement
         String query = "SELECT ownerName, email, phone, message, neutered, chipped FROM LostPets ";
-        if (email != null) {
-            query = " or email = ?";
+        boolean emailValid = email != null && !"".equals(email);
+        boolean ownerValid = owner != null && !"".equals(owner);
+        boolean phoneValid = phone != null && !"".equals(phone);
+
+        if(emailValid || ownerValid || phoneValid) {
+            query = query + " WHERE ";
         }
-        if (owner != null) {
-            query = " or owner = ?";
+        int index = 1;
+        boolean needsOr = false;
+        if (emailValid) {
+            query += "email = ?";
+            needsOr = true;
+            indexEmail = index;
+            index++;
         }
+        if (owner != null && !"".equals(owner)) {
+            if(needsOr) {
+                query += " OR ";
+            }
+            query += "owner = ?";
+            needsOr = true;
+            indexOwner = index;
+            index++;
+        }
+        if(phone != null && !"".equals(phone)) {
+            if(needsOr) {
+                query += " OR ";
+            }
+            query += "phone = ?";
+            needsOr = true;
+            indexPhone = index;
+            index++;
+        }
+        System.out.println(query);
         PreparedStatement pSt = conn.prepareStatement(query);
-        if (email != null) {
-            pSt.setString(1, email);
+        if (emailValid) {
+            pSt.setString(indexEmail, email);
         }
-        pSt.setString(1, owner);
+        if(ownerValid) {
+            pSt.setString(indexOwner, owner);
+        }
+        if(phoneValid) {
+            pSt.setString(indexPhone, phone);
+        }
+
+
         // 4. execute a query
 
         ResultSet rs = pSt.executeQuery(query);
 
         // 5. iterate the result set and print the values
-        List<Losts> lostss = new ArrayList<>();
+        List<LostEntry> lostss = new ArrayList<>();
         while (rs.next()) {
-            Losts losts = new Losts(
+            LostEntry losts = new LostEntry(
                     rs.getString("ownerName"),
                     rs.getString("email"),
                     rs.getString("phone"),
